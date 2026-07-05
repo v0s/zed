@@ -2188,6 +2188,9 @@ mod tests {
             .unindent(),
             r#" { "editor.tabSize": 37 } "#.to_owned(),
             r#"{
+              "project_panel": {
+                "focus_file_tab_on_single_click": true
+              },
               "base_keymap": "VSCode",
               "minimap": {
                 "show": "always"
@@ -2209,6 +2212,9 @@ mod tests {
             .unindent(),
             r#"{ "editor.tabSize": 42 }"#.to_owned(),
             r#"{
+                "project_panel": {
+                    "focus_file_tab_on_single_click": true
+                },
                 "base_keymap": "VSCode",
                 "minimap": {
                     "show": "always"
@@ -2232,6 +2238,9 @@ mod tests {
             .unindent(),
             r#"{}"#.to_owned(),
             r#"{
+                "project_panel": {
+                    "focus_file_tab_on_single_click": true
+                },
                 "base_keymap": "VSCode",
                 "minimap": {
                     "show": "always"
@@ -2254,7 +2263,8 @@ mod tests {
             r#"{ "git.decorations.enabled": true }"#.to_owned(),
             r#"{
               "project_panel": {
-                "git_status": true
+                "git_status": true,
+                "focus_file_tab_on_single_click": true
               },
               "outline_panel": {
                 "git_status": true
@@ -2286,9 +2296,29 @@ mod tests {
             .unindent(),
             r#"{
               "project_panel": {
+                "focus_file_tab_on_single_click": true,
                 "sort_mode": "mixed",
                 "sort_order": "lower"
               },
+              "base_keymap": "VSCode",
+              "minimap": {
+                "show": "always"
+              }
+            }
+            "#
+            .unindent(),
+            cx,
+        );
+
+        // no "focus_file_tab_on_single_click" with doubleClick open mode
+        check_vscode_import(
+            &mut store,
+            r#"{
+            }
+            "#
+            .unindent(),
+            r#"{ "workbench.list.openMode": "doubleClick" }"#.to_owned(),
+            r#"{
               "base_keymap": "VSCode",
               "minimap": {
                 "show": "always"
@@ -2308,6 +2338,9 @@ mod tests {
             .unindent(),
             r#"{ "editor.fontFamily": "Cascadia Code, 'Consolas', Courier New" }"#.to_owned(),
             r#"{
+              "project_panel": {
+                "focus_file_tab_on_single_click": true
+              },
               "base_keymap": "VSCode",
               "minimap": {
                 "show": "always"
@@ -2335,6 +2368,9 @@ mod tests {
               "terminal": {
                 "bell": "system"
               },
+              "project_panel": {
+                "focus_file_tab_on_single_click": true
+              },
               "base_keymap": "VSCode",
               "minimap": {
                 "show": "always"
@@ -2356,6 +2392,9 @@ mod tests {
             r#"{
               "terminal": {
                 "bell": "off"
+              },
+              "project_panel": {
+                "focus_file_tab_on_single_click": true
               },
               "base_keymap": "VSCode",
               "minimap": {
@@ -2379,6 +2418,9 @@ mod tests {
               "terminal": {
                 "bell": "system"
               },
+              "project_panel": {
+                "focus_file_tab_on_single_click": true
+              },
               "base_keymap": "VSCode",
               "minimap": {
                 "show": "always"
@@ -2400,6 +2442,9 @@ mod tests {
             r#"{
               "terminal": {
                 "bell": "off"
+              },
+              "project_panel": {
+                "focus_file_tab_on_single_click": true
               },
               "base_keymap": "VSCode",
               "minimap": {
@@ -2427,6 +2472,9 @@ mod tests {
               "terminal": {
                 "bell": "off"
               },
+              "project_panel": {
+                "focus_file_tab_on_single_click": true
+              },
               "base_keymap": "VSCode",
               "minimap": {
                 "show": "always"
@@ -2450,6 +2498,9 @@ mod tests {
             }"#
             .to_owned(),
             r#"{
+              "project_panel": {
+                "focus_file_tab_on_single_click": true
+              },
               "base_keymap": "VSCode",
               "minimap": {
                 "show": "always"

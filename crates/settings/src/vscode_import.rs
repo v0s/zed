@@ -804,6 +804,10 @@ impl VsCodeSettings {
             drag_and_drop: None,
             entry_spacing: None,
             file_icons: None,
+            focus_file_tab_on_single_click: match self.read_str("workbench.list.openMode") {
+                Some("doubleClick") => None,
+                _ => Some(true),
+            },
             folder_icons: None,
             git_status: self.read_bool("git.decorations.enabled"),
             hide_gitignore: self.read_bool("explorer.excludeGitIgnore"),

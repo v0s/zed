@@ -127,13 +127,14 @@ The following VS Code settings are automatically imported when you use **Import 
 
 **Project Panel (File Explorer)**
 
-| VS Code Setting                | Zed Setting                         |
-| ------------------------------ | ----------------------------------- |
-| `explorer.compactFolders`      | `project_panel.auto_fold_dirs`      |
-| `explorer.autoReveal`          | `project_panel.auto_reveal_entries` |
-| `explorer.excludeGitIgnore`    | `project_panel.hide_gitignore`      |
-| `problems.decorations.enabled` | `project_panel.show_diagnostics`    |
-| `explorer.decorations.badges`  | `project_panel.git_status`          |
+| VS Code Setting                | Zed Setting                                    |
+| ------------------------------ | ---------------------------------------------- |
+| `explorer.compactFolders`      | `project_panel.auto_fold_dirs`                 |
+| `explorer.autoReveal`          | `project_panel.auto_reveal_entries`            |
+| `explorer.excludeGitIgnore`    | `project_panel.hide_gitignore`                 |
+| `problems.decorations.enabled` | `project_panel.show_diagnostics`               |
+| `explorer.decorations.badges`  | `project_panel.git_status`                     |
+| `workbench.list.openMode`      | `project_panel.focus_file_tab_on_single_click` |
 
 **Git**
 
