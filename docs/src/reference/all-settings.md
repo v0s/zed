@@ -4957,6 +4957,7 @@ Run the {#action theme_selector::Toggle} action in the command palette to see a 
     "git_status": true,
     "indent_size": 20,
     "auto_reveal_entries": true,
+    "focus_file_tab_on_single_click": false,
     "auto_fold_dirs": true,
     "bold_folder_labels": false,
     "drag_and_drop": true,
@@ -5100,6 +5101,34 @@ Run the {#action theme_selector::Toggle} action in the command palette to see a 
 {
   "project_panel": {
     "auto_reveal_entries": false
+  }
+}
+```
+
+### Focus File Tab On Single Click
+
+- Description: Whether to focus the tab opened from the project panel even when the file entry is single-clicked.
+- Setting: `focus_file_tab_on_single_click`
+- Default: `false`
+
+**Options**
+
+1. Enable focusing file tab when single-clicking a file in the project panel
+
+```json [settings]
+{
+  "project_panel": {
+    "focus_file_tab_on_single_click": true
+  }
+}
+```
+
+2. Disable focusing file tab when single-clicking a file in the project panel
+
+```json [settings]
+{
+  "project_panel": {
+    "focus_file_tab_on_single_click": false
   }
 }
 ```

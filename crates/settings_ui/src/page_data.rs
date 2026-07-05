@@ -4921,7 +4921,7 @@ fn window_and_layout_page() -> SettingsPage {
 }
 
 fn panels_page() -> SettingsPage {
-    fn project_panel_section() -> [SettingsPageItem; 29] {
+    fn project_panel_section() -> [SettingsPageItem; 30] {
         [
             SettingsPageItem::SectionHeader("Project Panel"),
             SettingsPageItem::SettingItem(SettingItem {
@@ -5109,6 +5109,29 @@ fn panels_page() -> SettingsPage {
                             .project_panel
                             .get_or_insert_default()
                             .auto_reveal_entries = value;
+                    },
+                }),
+                metadata: None,
+                files: USER,
+            }),
+            SettingsPageItem::SettingItem(SettingItem {
+                title: "Focus File Tab On Single Click",
+                description: "Whether to focus the tab opened from the project panel even when the file entry is single-clicked.",
+                field: Box::new(SettingField {
+                    organization_override: None,
+                    json_path: Some("project_panel.focus_file_tab_on_single_click"),
+                    pick: |settings_content| {
+                        settings_content
+                            .project_panel
+                            .as_ref()?
+                            .focus_file_tab_on_single_click
+                            .as_ref()
+                    },
+                    write: |settings_content, value, _| {
+                        settings_content
+                            .project_panel
+                            .get_or_insert_default()
+                            .focus_file_tab_on_single_click = value;
                     },
                 }),
                 metadata: None,

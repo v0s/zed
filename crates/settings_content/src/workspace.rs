@@ -762,6 +762,11 @@ pub struct ProjectPanelSettingsContent {
     ///
     /// Default: true
     pub auto_reveal_entries: Option<bool>,
+    /// Whether to focus the tab opened from the project panel
+    /// even when the file entry is single-clicked.
+    ///
+    /// Default: false
+    pub focus_file_tab_on_single_click: Option<bool>,
     /// Whether to fold directories automatically
     /// when directory has only one directory inside.
     ///

@@ -6002,7 +6002,8 @@ impl ProjectPanel {
                         let preview_tabs_enabled =
                             PreviewTabsSettings::get_global(cx).enable_preview_from_project_panel;
                         let click_count = event.click_count();
-                        let focus_opened_item = click_count > 1;
+                        let focus_opened_item = click_count > 1
+                            || ProjectPanelSettings::get_global(cx).focus_file_tab_on_single_click;
                         let allow_preview = preview_tabs_enabled && click_count == 1;
                         project_panel.open_entry(entry_id, focus_opened_item, allow_preview, cx);
                     }
